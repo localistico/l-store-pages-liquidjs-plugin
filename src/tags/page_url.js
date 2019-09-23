@@ -5,7 +5,7 @@ const page_url = {
     this.model = tagToken.args.split(' ')[1]; // model
   },
   render: function(scope, hash) {
-    return `/${this.name}?model=${this.model}`;
+    return `/${this.name}`;
   }
 };
 
