@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Store Pages custom tags and filters for LiquidJS",
   "main": "src/index.js",
+  "private": true,
   "scripts": {
     "eslint": "npm-run eslint src/**/*.js",
     "test": "npm-run mocha \"test/**/*.js\""
