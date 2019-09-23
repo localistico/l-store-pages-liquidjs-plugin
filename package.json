@@ -1,0 +1,20 @@
+{
+  "name": "l-store-pages-liquidjs-plugin",
+  "version": "1.0.0",
+  "description": "Store Pages custom tags and filters for LiquidJS",
+  "main": "src/index.js",
+  "scripts": {
+    "eslint": "npm-run eslint src/**/*.js",
+    "test": "npm-run mocha \"test/**/*.js\""
+  },
+  "repository": "https://github.com/localistico/l-store-pages-liquidjs-plugin.git",
+  "author": "contact@localistico.com",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.4.0",
+    "liquidjs": "^9.0.0",
+    "mocha": "^6.2.0",
+    "npm-run": "^5.0.1"
+  }
+}
