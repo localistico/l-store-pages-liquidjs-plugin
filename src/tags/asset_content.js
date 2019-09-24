@@ -6,22 +6,23 @@ const path = require('path');
 
 // Usage: {% asset_content name %}
 const asset_content = {
+  // eslint-disable-next-line no-unused-vars
   parse: function(tagToken, remainTokens) {
     this.str = tagToken.args; // name
   },
+  // eslint-disable-next-line no-unused-vars
   render: async function(scope, hash) {
-    try {
-      const extname = path.extname(this.str);
-      const assets_content_path = scope.environments.assets_content_path || DEFAULT_ASSETS_CONTENT_PATH;
-      if (ALLOWED_FILE_EXT.includes(extname)) {
-        const filepath = `${scope.opts.root[0]}/${assets_content_path}/${this.str}`;
-        const content = fs.readFileSync(filepath);
-        return content;
-      } else {
+    const extname = path.extname(this.str);
+    const assets_content_path = scope.environments.assets_content_path || DEFAULT_ASSETS_CONTENT_PATH;
+    const filepath = `${scope.opts.root[0]}/${assets_content_path}/${this.str}`;
+    if (ALLOWED_FILE_EXT.includes(extname)) {
+      try {
+        return fs.readFileSync(filepath);
+      } catch(e) {
         return `Asset not found at ${assets_content_path}/${this.str}`;
       }
-    } catch(e) {
-      console.log('Error caught:', e);
+    } else {
+      return `File extension not allowed for asset_content`;
     }
   }
 };

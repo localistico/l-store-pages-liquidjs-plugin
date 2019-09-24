@@ -1,21 +1,26 @@
 const DEFAULT_SNIPPETS_PATH = 'snippets';
 
-const keyParamsRE = /^([^\s]+)(.*)/;
+// eslint-disable-next-line no-useless-escape
 const paramsRE = /([\w-]+)\s*=\s*(?:("[^"\\]*(?:\\.[^"\\]*)*")|('[^'\\]*(?:\\.[^'\\]*)*')|([\w\.-]+))/g;
+const keyParamsRE = /^([^\s]+)(.*)/;
 
 // Usage: {% snippet name params %}
 const snippet = {
+  // eslint-disable-next-line no-unused-vars
   parse: function(tagToken, remainTokens) {
     let match = keyParamsRE.exec(tagToken.args);
     this.key = match[1];
     this.params = match[2].trim();
   },
+  // eslint-disable-next-line no-unused-vars
   render: async function(scope, hash) {
+    const filepath = `${DEFAULT_SNIPPETS_PATH}/${this.key}${scope.opts.extname}`;
+    let snippet = {};
+
     try {
-      const filepath = `${DEFAULT_SNIPPETS_PATH}/${this.key}${scope.opts.extname}`;
-      let snippet = {};
       if (this.params) {
         let match;
+        // eslint-disable-next-line no-cond-assign
         while (match = paramsRE.exec(this.params)) {
           snippet[match[1]] = await this.liquid.evalValue(match[2] || match[3] || match[4], scope);
         }
@@ -29,7 +34,7 @@ const snippet = {
       scope.pop(ctx);
       return html;
     } catch(e) {
-      console.log('Error caught:', e);
+      return 'Snippet render fails';
     }
   }
 };
