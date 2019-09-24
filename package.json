@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "eslint": "yarn run eslint src/**/*.js",
+    "lint": "yarn run eslint src/**/*.js",
     "test": "yarn run mocha \"test/**/*.js\" --ignore \"test/stub/**\"",
     "test-watch": "yarn run mocha --watch \"test/**/*.js\" --ignore \"test/stub/**\""
   },
