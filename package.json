@@ -5,9 +5,9 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "eslint": "npm-run eslint src/**/*.js",
-    "test": "npm-run mocha \"test/**/*.js\" --ignore \"test/stub/**\"",
-    "test-watch": "npm-run mocha --watch \"test/**/*.js\" --ignore \"test/stub/**\""
+    "eslint": "yarn run eslint src/**/*.js",
+    "test": "yarn run mocha \"test/**/*.js\" --ignore \"test/stub/**\"",
+    "test-watch": "yarn run mocha --watch \"test/**/*.js\" --ignore \"test/stub/**\""
   },
   "repository": "https://github.com/localistico/l-store-pages-liquidjs-plugin.git",
   "author": "contact@localistico.com",
