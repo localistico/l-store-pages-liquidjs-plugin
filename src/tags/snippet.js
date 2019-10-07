@@ -17,25 +17,21 @@ const snippet = {
     const filepath = `${DEFAULT_SNIPPETS_PATH}/${this.key}${scope.opts.extname}`;
     let snippet = {};
 
-    try {
-      if (this.params) {
-        let match;
-        // eslint-disable-next-line no-cond-assign
-        while (match = paramsRE.exec(this.params)) {
-          snippet[match[1]] = await this.liquid.evalValue(match[2] || match[3] || match[4], scope);
-        }
+    if (this.params) {
+      let match;
+      // eslint-disable-next-line no-cond-assign
+      while (match = paramsRE.exec(this.params)) {
+        snippet[match[1]] = await this.liquid.evalValue(match[2] || match[3] || match[4], scope);
       }
-      let ctx = {
-        snippet
-      };
-      const templates = await this.liquid.getTemplate(filepath, scope.opts.root);
-      scope.push(ctx);
-      const html = await this.liquid.renderer.renderTemplates(templates, scope);
-      scope.pop(ctx);
-      return html;
-    } catch(e) {
-      return 'Snippet render fails';
     }
+    let ctx = {
+      snippet
+    };
+    const templates = await this.liquid.getTemplate(filepath, scope.opts.root);
+    scope.push(ctx);
+    const html = await this.liquid.renderer.renderTemplates(templates, scope);
+    scope.pop(ctx);
+    return html;
   }
 };
 

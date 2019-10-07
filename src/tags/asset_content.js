@@ -16,13 +16,9 @@ const asset_content = {
     const assets_content_path = scope.environments.assets_content_path || DEFAULT_ASSETS_CONTENT_PATH;
     const filepath = `${scope.opts.root[0]}/${assets_content_path}/${this.str}`;
     if (ALLOWED_FILE_EXT.includes(extname)) {
-      try {
-        return fs.readFileSync(filepath);
-      } catch(e) {
-        return `Asset not found at ${assets_content_path}/${this.str}`;
-      }
+      return fs.readFileSync(filepath);
     } else {
-      return `File extension not allowed for asset_content`;
+      throw Error(`File extension "${extname}" not allowed for asset_content`);
     }
   }
 };
