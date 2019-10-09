@@ -15,7 +15,6 @@
   "dependencies": {
     "eslint": "^6.4.0",
     "jest": "^24.9.0",
-    "liquidjs": "^9.0.0",
-    "npm-run": "^5.0.1"
+    "liquidjs": "^9.0.0"
   }
 }

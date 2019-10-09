@@ -13,9 +13,7 @@
 
   // Tags
   this.registerTag('asset_path',         require('./tags/asset_path'));
-  this.registerTag('gallery_asset_path', require('./tags/asset_path'));
   this.registerTag('snippet',            require('./tags/snippet'));
-  this.registerTag('gallery_snippet',    require('./tags/snippet'));
   this.registerTag('asset_content',      require('./tags/asset_content'));
   this.registerTag('page_url',           require('./tags/page_url'));
 

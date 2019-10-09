@@ -5,7 +5,7 @@ const path = require('path');
 let liquid;
 beforeAll(function () {
   liquid = new Liquid.Liquid({
-    root: path.resolve(__dirname, './stub/'),
+    root: path.resolve(__dirname, './stub'),
     extname: '.liquid',
   });
   liquid.plugin(plugin);
@@ -41,8 +41,12 @@ describe('Tags', () => {
 
   describe('asset_path', () => {
     test('should render a correct asset_path', async () => {
-      const html = await liquid.parseAndRender('{% asset_path favicon.png %}');
-      expect(html).toBe('/assets/favicon.png');
+      const html = await liquid.parseAndRender('{% asset_path draw.svg %}');
+      expect(html).toBe('/assets/draw.svg');
+    });
+    test('should throw that the asset file was not found', async function () {
+      expect(liquid.parseAndRender('{% asset_content unknown.css %}'))
+        .rejects.toThrow();
     });
   });
 
