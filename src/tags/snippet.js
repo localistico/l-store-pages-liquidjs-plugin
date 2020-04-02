@@ -1,6 +1,5 @@
 const DEFAULT_SNIPPETS_PATH = 'snippets';
 
-// eslint-disable-next-line no-useless-escape
 const paramsRE = require('./../constants/regexps').paramsRE;
 const keyParamsRE = require('./../constants/regexps').keyParamsRE;
 

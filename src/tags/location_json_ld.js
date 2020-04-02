@@ -6,7 +6,6 @@
 const path = require('path');
 const fs = require('fs');
 
-// eslint-disable-next-line no-useless-escape
 const paramsRE = require('./../constants/regexps').paramsRE;
 const keyParamsRE = require('./../constants/regexps').keyParamsRE;
 
