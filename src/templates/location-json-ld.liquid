@@ -1,0 +1,68 @@
+{%- assign location_description = '' -%}
+{%- if location.description.size > 0 -%}
+{%-   assign location_description = location.description | escape | strip -%}
+{%- elsif location.short_summary.size > 0 -%}
+{%-   assign location_description = location.short_summary | escape | strip -%}
+{%- elsif location.summary.size > 0 -%}
+{%-   assign location_description = location.summary | escape | strip -%}
+{%- endif -%}
+{%- assign location_main_image = location.images | where: "role", "main" | map: "original" | first -%}
+{%- if location_main_image and location_main_image.size > 0 -%}
+{%-   assign location_image = location_main_image -%}
+{%- elsif business.logo.size > 0 -%}
+{%-   assign location_image = business.logo.square -%}
+{%- endif -%}
+{
+  "@context": "http://schema.org",
+  "@id": "{% page_url store-page location.id %}",
+  "@type": "{{ location.type }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ location.street_address | escape | strip }}",
+    "postalCode":"{{ location.postcode | escape | strip }}",
+    "addressLocality": "{{ location.locality | escape | strip }}",
+    "addressRegion": "{{ location.region | escape | strip }}",
+    "addressCountry": "{{ location.country_code | escape | strip }}"
+  },
+  "identifier": "d83bb2fe-a29a-4d12-88b4-9130893d4422",
+  "name": "{{ location.name | escape | strip }}",
+  "image": "{{ location_image }}",
+  "telephone": "{{ location.phone | escape | strip }}",
+  "description": "{{ location_description | newline_to_br | strip_newlines | replace: '<br /><br />', ' ' | replace: '<br />', ' ' | strip_html | escape | strip }}",
+  "url": "{% page_url store-page location.id %}",
+  "openingHoursSpecification": [
+    {%- assign separator = false -%}
+    {%- for day in location.hours -%}
+      {% capture day_name %}
+        {% case day[0] %}
+          {% when 'mon' %} Monday
+          {% when 'tue' %} Tuesday
+          {% when 'wed' %} Wednesday
+          {% when 'thu' %} Thursday
+          {% when 'fri' %} Friday
+          {% when 'sat' %} Saturday
+          {% when 'sun' %} Sunday
+        {% endcase %}
+      {% endcapture %}
+      {%- for range in day[1] -%}
+        {% if separator %},{% endif %}{% assign separator = true %}{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "{{ day_name | strip }}",
+          "opens": "{{ range.from }}",
+          "closes": "{{ range.to }}"
+        }
+      {%- endfor -%}
+    {%- endfor -%}
+  ],
+  {% if location.links.size > 0 -%}
+    {% assign links = location.links | where_exp:"profile","profile.platform != 'store_pages'" | where_exp:"profile","profile.owned == true" | map: "url" -%}
+    {% if links.size > 0 -%}
+      "sameAs": ["{{ links | join: '","'}}"],
+    {% endif -%}
+  {% endif -%}
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "{{ location.lat }}",
+    "longitude": "{{ location.lng }}"
+  }
+}

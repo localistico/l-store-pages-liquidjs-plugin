@@ -16,6 +16,7 @@
   this.registerTag('snippet',            require('./tags/snippet'));
   this.registerTag('asset_content',      require('./tags/asset_content'));
   this.registerTag('page_url',           require('./tags/page_url'));
+  this.registerTag('location_json_ld',   require('./tags/location_json_ld'));
 
   // Filters
   this.registerFilter('group_by',        require('./filters/group_by'));
