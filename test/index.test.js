@@ -1,6 +1,7 @@
 const Liquid = require('liquidjs');
 const plugin = require('../src/index');
 const path = require('path');
+const fs = require('fs');
 
 let liquid;
 beforeAll(function () {
@@ -66,6 +67,27 @@ describe('Tags', () => {
       expect(liquid.parseAndRender('{% snippet missing %}'))
         .rejects.toThrow();
     });
+  });
+
+  describe('location_json_ld', function () {
+    let scope;
+
+    beforeEach(() => {
+      scope = JSON.parse(fs.readFileSync(path.resolve(__dirname, './data/store.json')), 'utf-8');
+    });
+
+    test('should render the jsonld content', async function () {
+      const jsonldMockup = JSON.parse(fs.readFileSync(path.resolve(__dirname, './stub/location-json-ld.json')), 'utf-8');
+      const jsonld = JSON.parse(await liquid.parseAndRender('{% location_json_ld location.id %}', scope));
+      expect(jsonld).toStrictEqual(jsonldMockup);
+    });
+
+    test('should render the jsonld content overriding params', async function () {
+      const jsonldMockup = JSON.parse(fs.readFileSync(path.resolve(__dirname, './stub/location-json-ld-with-params.json')), 'utf-8');
+      const jsonld = JSON.parse(await liquid.parseAndRender('{% location_json_ld location.id  name=\'Example Name\' type=\'ExampleType\' description=\'my custom description\' template_key=\'my-awesome-template\' %}', scope));
+      expect(jsonld).toStrictEqual(jsonldMockup);
+    });
+
   });
 });
 

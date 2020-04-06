@@ -1,0 +1,694 @@
+
+{
+  "canonical_tag": "<link rel=\"canonical\" href=\"https://office.localistico.com/localistico-madrid-hq\" />",
+  "canonical_url": "https://office.localistico.com/localistico-madrid-hq",
+  "business": {
+    "id": "b5e0ea69-b3ed-46c4-bfe2-a5111107ce35",
+    "localistico_id": "8b1d3f87-b578-4c13-95c7-dcb644f6c537",
+    "name": "Localistico",
+    "created_at": "2018-07-24 14:34:25 UTC",
+    "updated_at": "2019-04-30 14:38:48 UTC",
+    "access_token": "pqQWff1vH6jGmew2XPdLyTff",
+    "main_host_id": 2,
+    "primary_color": "#ff5500",
+    "secondary_color": "#ff5500",
+    "facebook_page": "https://www.facebook.com/localistico/",
+    "twitter_page": "https://twitter.com/localistico",
+    "instagram_page": "",
+    "logo": {
+      "original": "https://office.localistico.com/assets/business/b5e0ea69-b3ed-46c4-bfe2-a5111107ce35/logo/original-c27ce6338b540a2408dc123739e0798d.jpg",
+      "thumb": "https://office.localistico.com/assets/business/b5e0ea69-b3ed-46c4-bfe2-a5111107ce35/logo/thumb-5cbaac1e1cd09a93a08261f314da5c52.jpg",
+      "small": "https://office.localistico.com/assets/business/b5e0ea69-b3ed-46c4-bfe2-a5111107ce35/logo/small-c7eb38ee36b4efa06f4a01cf4734d8ec.jpg",
+      "square": "https://office.localistico.com/assets/business/b5e0ea69-b3ed-46c4-bfe2-a5111107ce35/logo/square-1a791480b0247e2ef6cb985c419b6132.jpg",
+      "landscape": "https://office.localistico.com/assets/business/b5e0ea69-b3ed-46c4-bfe2-a5111107ce35/logo/landscape-b6e3216e3fdd00ff691958b2b8950de5.jpg"
+    },
+    "main_domain": "office.localistico.com"
+  },
+  "location": {
+    "id": "d83bb2fe-a29a-4d12-88b4-9130893d4422",
+    "localistico_id": "09e44007-9cf9-4ced-adb1-786f6206cc6b",
+    "business_id": "b5e0ea69-b3ed-46c4-bfe2-a5111107ce35",
+    "name": "Localistico Madrid HQ",
+    "lat": 40.4189492,
+    "lng": -3.7092536,
+    "street_address": "Calle de Campomanes, 6",
+    "postcode": "28013",
+    "locality": "Madrid",
+    "region": "Madrid",
+    "country_code": "ES",
+    "phone": "+34965020305",
+    "website": "https://localistico.com/?utm_content=Localistico+Madrid+HQ&utm_medium=09e44007-9cf9-4ced-adb1-786f6206cc6b&utm_source=store_pages",
+    "summary": null,
+    "short_summary": "La plataforma de marketing local y analítica que te ayuda a llevar más clientes de online a offline.",
+    "closed": false,
+    "created_at": "2019-05-16 09:14:40 UTC",
+    "updated_at": "2019-06-04 17:20:17 UTC",
+    "location_external_id": "localistico-mad",
+    "slug": "localistico-madrid-hq",
+    "lnglat": "POINT (-3.7092536 40.4189492)",
+    "custom_attribute_place_id": "ChIJWXklJ1YpQg0RQtBiFIKXJSg",
+    "links": [
+      {
+        "url": "https://maps.google.com/maps?cid=2892884920598974530",
+        "owned": true,
+        "platform": "google"
+      },
+      {
+        "url": "https://office.localistico.com/localistico-madrid-hq",
+        "owned": true,
+        "platform": "store_pages"
+      },
+      {
+        "url": "https://foursquare.com/v/localistico-madrid-hq/5cdd14b2f8cbd4002c7fdfdf",
+        "owned": false,
+        "platform": "foursquare"
+      }
+    ],
+    "hours": {
+      "mon": [
+        {
+          "to": "18:00",
+          "from": "09:00"
+        }
+      ],
+      "tue": [
+        {
+          "to": "18:00",
+          "from": "09:00"
+        }
+      ],
+      "wed": [
+        {
+          "to": "18:00",
+          "from": "09:00"
+        }
+      ],
+      "thu": [
+        {
+          "to": "18:00",
+          "from": "09:00"
+        }
+      ],
+      "fri": [
+        {
+          "to": "18:00",
+          "from": "09:00"
+        }
+      ]
+    },
+    "images": [
+      {
+        "role": "main",
+        "alt": null,
+        "label": null,
+        "original": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/original-04cf4e7491d596831f6ca78d1a5e2222.jpg",
+        "thumb": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/thumb-bebdef466c63330481eab975267887fc.jpg",
+        "small": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/small-99e4533449274a15dc57a61e9e55fc2a.jpg",
+        "square": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/square-5725bcf09c72076c1e5f7013ed8e981d.jpg",
+        "landscape": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/landscape-179565b4fc6feb0424108fdd47f75c62.jpg"
+      }
+    ],
+    "full_address": "Calle de Campomanes, 6<br />\n28013 Madrid<br />\nMadrid, ES",
+    "national_phone_number": "965 02 03 05",
+    "international_phone_number": "+34 965 02 03 05",
+    "pages": [
+      {
+        "url": "https://office.localistico.com/localistico-madrid-hq",
+        "template_name": "Localistico Store Page",
+        "template_id": "c7c76f36-8ea4-4bdc-8f4e-44986f988aa1"
+      }
+    ]
+  },
+  "locations": [
+    {
+      "id": "b302ca31-b5b6-467d-bd2a-3ae95040c577",
+      "localistico_id": "ef665e66-c758-49cb-96e7-7e52cb1a2fbc",
+      "business_id": "b5e0ea69-b3ed-46c4-bfe2-a5111107ce35",
+      "name": "Localistico London HQ",
+      "lat": 51.49379995,
+      "lng": -0.14857577,
+      "street_address": "Eccleston Yards, 25 Eccleston Pl",
+      "postcode": "SW1W 9NF",
+      "locality": "London",
+      "region": "",
+      "country_code": "GB",
+      "phone": "+442038081169",
+      "website": "https://localistico.com/?utm_content=Localistico+London+HQ&utm_medium=ef665e66-c758-49cb-96e7-7e52cb1a2fbc&utm_source=store_pages",
+      "summary": null,
+      "short_summary": "Taking Customers from Search to Store.\n\nDrive more traffic to your locations and get better insights - in the simplest way.",
+      "closed": false,
+      "created_at": "2019-05-16 09:18:10 UTC",
+      "updated_at": "2019-07-02 08:41:27 UTC",
+      "location_external_id": "localistico-lon",
+      "slug": "localistico-london-hq",
+      "lnglat": "POINT (-0.14857577 51.49379995)",
+      "custom_attribute_place_id": "ChIJxxdvnnsFdkgRmM7WjMIgyYM",
+      "links": [
+        {
+          "url": "https://maps.google.com/maps?cid=9496157309246033560",
+          "owned": true,
+          "platform": "google"
+        },
+        {
+          "url": "https://www.bing.com/maps?ss=ypid:YN1029x1144614301541475953",
+          "owned": false,
+          "platform": "bing"
+        },
+        {
+          "url": "https://office.localistico.com/localistico-london-hq",
+          "owned": true,
+          "platform": "store_pages"
+        },
+        {
+          "url": "https://foursquare.com/v/localistico-london-hq/5cdd14b06eda02002c3cf863",
+          "owned": false,
+          "platform": "foursquare"
+        },
+        {
+          "url": "https://www.facebook.com/Localistico-644364819360188/",
+          "owned": true,
+          "platform": "facebook"
+        }
+      ],
+      "hours": {
+        "mon": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "tue": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "wed": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "thu": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "fri": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ]
+      },
+      "images": [
+        {
+          "role": "main",
+          "alt": null,
+          "label": null,
+          "original": "https://office.localistico.com/cache/locationimage/image/9a077788c1c27826400336e47cde6666.jpg20190702-5402-76z201",
+          "thumb": "https://office.localistico.com/cache/locationimage/image/9a077788c1c27826400336e47cde6666.jpg20190702-5402-76z201",
+          "small": "https://office.localistico.com/cache/locationimage/image/9a077788c1c27826400336e47cde6666.jpg20190702-5402-76z201",
+          "square": "https://office.localistico.com/cache/locationimage/image/9a077788c1c27826400336e47cde6666.jpg20190702-5402-76z201",
+          "landscape": "https://office.localistico.com/cache/locationimage/image/9a077788c1c27826400336e47cde6666.jpg20190702-5402-76z201"
+        },
+        {
+          "role": "main",
+          "alt": null,
+          "label": null,
+          "original": "https://office.localistico.com/assets/locationimage/2458caaf-6d85-4ddd-97c6-e485ae4cb045/image/original-2243a31d1472785ac6723da3945ded7a.jpg",
+          "thumb": "https://office.localistico.com/assets/locationimage/2458caaf-6d85-4ddd-97c6-e485ae4cb045/image/thumb-1f6b56e3ae057d0f03f1d10e8316f941.jpg",
+          "small": "https://office.localistico.com/assets/locationimage/2458caaf-6d85-4ddd-97c6-e485ae4cb045/image/small-187d54ce32a1f67f4e061fb915b6efe4.jpg",
+          "square": "https://office.localistico.com/assets/locationimage/2458caaf-6d85-4ddd-97c6-e485ae4cb045/image/square-c2573a484cd93adbb17227cebae0c0be.jpg",
+          "landscape": "https://office.localistico.com/assets/locationimage/2458caaf-6d85-4ddd-97c6-e485ae4cb045/image/landscape-fe8ff95b509b2e38b482588fe29443ef.jpg"
+        }
+      ],
+      "full_address": "Eccleston Yards, 25 Eccleston Pl<br />\nLondon SW1W 9NF<br />\nGB",
+      "national_phone_number": "020 3808 1169",
+      "international_phone_number": "+44 20 3808 1169",
+      "pages": [
+        {
+          "url": "https://office.localistico.com/localistico-london-hq",
+          "template_name": "Localistico Store Page",
+          "template_id": "c7c76f36-8ea4-4bdc-8f4e-44986f988aa1"
+        }
+      ],
+      "distance": 1261454.6660723824,
+      "distance_human": "1260 km",
+      "current_template_url": "https://office.localistico.com/localistico-london-hq"
+    },
+    {
+      "id": "d83bb2fe-a29a-4d12-88b4-9130893d4422",
+      "localistico_id": "09e44007-9cf9-4ced-adb1-786f6206cc6b",
+      "business_id": "b5e0ea69-b3ed-46c4-bfe2-a5111107ce35",
+      "name": "Localistico Madrid HQ",
+      "lat": 40.4189492,
+      "lng": -3.7092536,
+      "street_address": "Calle de Campomanes, 6",
+      "postcode": "28013",
+      "locality": "Madrid",
+      "region": "Madrid",
+      "country_code": "ES",
+      "phone": "+34965020305",
+      "website": "https://localistico.com/?utm_content=Localistico+Madrid+HQ&utm_medium=09e44007-9cf9-4ced-adb1-786f6206cc6b&utm_source=store_pages",
+      "summary": null,
+      "short_summary": "La plataforma de marketing local y analítica que te ayuda a llevar más clientes de online a offline.",
+      "closed": false,
+      "created_at": "2019-05-16 09:14:40 UTC",
+      "updated_at": "2019-06-04 17:20:17 UTC",
+      "location_external_id": "localistico-mad",
+      "slug": "localistico-madrid-hq",
+      "lnglat": "POINT (-3.7092536 40.4189492)",
+      "custom_attribute_place_id": "ChIJWXklJ1YpQg0RQtBiFIKXJSg",
+      "links": [
+        {
+          "url": "https://maps.google.com/maps?cid=2892884920598974530",
+          "owned": true,
+          "platform": "google"
+        },
+        {
+          "url": "https://office.localistico.com/localistico-madrid-hq",
+          "owned": true,
+          "platform": "store_pages"
+        },
+        {
+          "url": "https://foursquare.com/v/localistico-madrid-hq/5cdd14b2f8cbd4002c7fdfdf",
+          "owned": false,
+          "platform": "foursquare"
+        }
+      ],
+      "hours": {
+        "mon": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "tue": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "wed": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "thu": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "fri": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ]
+      },
+      "images": [
+        {
+          "role": "main",
+          "alt": null,
+          "label": null,
+          "original": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/original-04cf4e7491d596831f6ca78d1a5e2222.jpg",
+          "thumb": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/thumb-bebdef466c63330481eab975267887fc.jpg",
+          "small": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/small-99e4533449274a15dc57a61e9e55fc2a.jpg",
+          "square": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/square-5725bcf09c72076c1e5f7013ed8e981d.jpg",
+          "landscape": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/landscape-179565b4fc6feb0424108fdd47f75c62.jpg"
+        }
+      ],
+      "full_address": "Calle de Campomanes, 6<br />\n28013 Madrid<br />\nMadrid, ES",
+      "national_phone_number": "965 02 03 05",
+      "international_phone_number": "+34 965 02 03 05",
+      "pages": [
+        {
+          "url": "https://office.localistico.com/localistico-madrid-hq",
+          "template_name": "Localistico Store Page",
+          "template_id": "c7c76f36-8ea4-4bdc-8f4e-44986f988aa1"
+        }
+      ],
+      "distance": 0.0,
+      "distance_human": "0 m",
+      "current_template_url": "https://office.localistico.com/localistico-madrid-hq"
+    },
+    {
+      "id": "cd74ef51-cc61-48ec-bd4a-13f1cf7f0d8f",
+      "localistico_id": null,
+      "business_id": "b5e0ea69-b3ed-46c4-bfe2-a5111107ce35",
+      "name": "Localistico Google Campus",
+      "lat": 40.41233199,
+      "lng": -3.71823907,
+      "street_address": "Calle Mazarredo, 9",
+      "postcode": "28005",
+      "locality": "Madrid",
+      "region": "Madrid",
+      "country_code": "ES",
+      "phone": "+34965020305",
+      "website": "https://localistico.com?utm_content=Localistico+Google+Campus&utm_medium=12d90798-958f-4a81-a1b0-f2491e13d208&utm_source=store_pages",
+      "summary": "",
+      "short_summary": "La plataforma de marketing local y analítica que te ayuda a llevar más clientes de online a offline.",
+      "closed": false,
+      "created_at": "2019-05-16 09:14:38 UTC",
+      "updated_at": "2019-06-04 17:20:16 UTC",
+      "location_external_id": "localistico-campus",
+      "slug": "localistico-google-campus",
+      "lnglat": "POINT (-3.71823907 40.41233199)",
+      "custom_attribute_place_id": "ChIJbVSN_nUoQg0RTdqMUI65RBQ",
+      "links": [
+        {
+          "url": "https://maps.google.com/maps?cid=1460496200062786125",
+          "owned": true,
+          "platform": "google"
+        },
+        {
+          "url": "",
+          "owned": false,
+          "platform": "bing"
+        },
+        {
+          "url": "https://office.localistico.com/localistico-google-campus",
+          "owned": false,
+          "platform": "store_pages"
+        },
+        {
+          "url": "https://foursquare.com/v/localistico-google-campus/58c8228144689a34730586d2",
+          "owned": true,
+          "platform": "foursquare"
+        },
+        {
+          "url": "https://www.facebook.com/LocalisticoMadrid/",
+          "owned": true,
+          "platform": "facebook"
+        },
+        {
+          "url": "https://office.localistico.com/localistico-localistico-campus",
+          "owned": true,
+          "platform": "store_pages"
+        },
+        {
+          "url": "http://www.yelp.com/biz/localistico-madrid",
+          "owned": false,
+          "platform": "yelp"
+        }
+      ],
+      "hours": {
+        "mon": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "tue": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "wed": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "thu": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "fri": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ]
+      },
+      "images": [
+
+      ],
+      "full_address": "Calle Mazarredo, 9<br />\n28005 Madrid<br />\nMadrid, ES",
+      "national_phone_number": "965 02 03 05",
+      "international_phone_number": "+34 965 02 03 05",
+      "pages": [
+        {
+          "url": "https://office.localistico.com/localistico-google-campus",
+          "template_name": "Localistico Store Page",
+          "template_id": "c7c76f36-8ea4-4bdc-8f4e-44986f988aa1"
+        }
+      ],
+      "distance": 1058.3359009639855,
+      "distance_human": "1.06 km",
+      "current_template_url": "https://office.localistico.com/localistico-google-campus"
+    },
+    {
+      "id": "76f9d55e-36a0-4725-b4c5-591ea0fcb503",
+      "localistico_id": "1df1353a-530d-4691-9238-011a980aba8b",
+      "business_id": "b5e0ea69-b3ed-46c4-bfe2-a5111107ce35",
+      "name": "Localistico Wayra ",
+      "lat": 51.51052549,
+      "lng": -0.13643886,
+      "street_address": "20 Air St",
+      "postcode": "W1B 5DL",
+      "locality": "London",
+      "region": "Greater London",
+      "country_code": "GB",
+      "phone": "+442038081169",
+      "website": "https://localistico.com?utm_content=Localistico+Wayra+&utm_medium=1df1353a-530d-4691-9238-011a980aba8b&utm_source=store_pages",
+      "summary": null,
+      "short_summary": "Taking Customers from Search to Store.\nDrive more traffic to your locations and get better insights - in the simplest way.",
+      "closed": false,
+      "created_at": "2019-05-16 08:57:18 UTC",
+      "updated_at": "2019-06-04 17:20:17 UTC",
+      "location_external_id": "localistico-wayra",
+      "slug": "localistico-wayra",
+      "lnglat": "POINT (-0.13643886 51.51052549)",
+      "custom_attribute_place_id": "ChIJW5bsiCsbdkgRs_Cli-N_6z8",
+      "links": [
+        {
+          "url": "https://maps.google.com/maps?cid=4605915659193675955",
+          "owned": true,
+          "platform": "google"
+        },
+        {
+          "url": "https://office.localistico.com/localistico-wayra",
+          "owned": true,
+          "platform": "store_pages"
+        },
+        {
+          "url": "https://foursquare.com/v/localistico-wayra/559abb0d498eff043d52187d",
+          "owned": true,
+          "platform": "foursquare"
+        },
+        {
+          "url": "https://www.facebook.com/Localistico-121079981798657/",
+          "owned": true,
+          "platform": "facebook"
+        },
+        {
+          "url": "http://www.yelp.com/biz/localistico-london-8",
+          "owned": true,
+          "platform": "yelp"
+        }
+      ],
+      "hours": {
+        "mon": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "tue": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "wed": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "thu": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ],
+        "fri": [
+          {
+            "to": "18:00",
+            "from": "09:00"
+          }
+        ]
+      },
+      "images": [
+        {
+          "role": "main",
+          "alt": null,
+          "label": null,
+          "original": "https://office.localistico.com/assets/locationimage/00c0a591-2d2b-4f71-b8d9-5179358cc9a3/image/original-1417ff24a55ea22c9a095a697506a248.jpg",
+          "thumb": "https://office.localistico.com/assets/locationimage/00c0a591-2d2b-4f71-b8d9-5179358cc9a3/image/thumb-746b185dba2996b3e69fc2f225b7da6f.jpg",
+          "small": "https://office.localistico.com/assets/locationimage/00c0a591-2d2b-4f71-b8d9-5179358cc9a3/image/small-45105203f6a50bb9105696f729d4736f.jpg",
+          "square": "https://office.localistico.com/assets/locationimage/00c0a591-2d2b-4f71-b8d9-5179358cc9a3/image/square-aa8d1b8d4dbc3de40870e78de2c25e20.jpg",
+          "landscape": "https://office.localistico.com/assets/locationimage/00c0a591-2d2b-4f71-b8d9-5179358cc9a3/image/landscape-4a57cec50efc13eac9c80f6ca577cf45.jpg"
+        }
+      ],
+      "full_address": "20 Air St<br />\nLondon W1B 5DL<br />\nGreater London, GB",
+      "national_phone_number": "020 3808 1169",
+      "international_phone_number": "+44 20 3808 1169",
+      "pages": [
+        {
+          "url": "https://office.localistico.com/localistico-wayra",
+          "template_name": "Localistico Store Page",
+          "template_id": "c7c76f36-8ea4-4bdc-8f4e-44986f988aa1"
+        }
+      ],
+      "distance": 1263461.9481091409,
+      "distance_human": "1260 km",
+      "current_template_url": "https://office.localistico.com/localistico-wayra"
+    },
+    {
+      "id": "ea517e91-de4f-4f0c-a0cc-dc41bb050e25",
+      "localistico_id": "4bbf0798-00c8-47f2-934e-cd1be0df8808",
+      "business_id": "b5e0ea69-b3ed-46c4-bfe2-a5111107ce35",
+      "name": "Localistico Benelux HQ",
+      "lat": 52.25766739,
+      "lng": 5.22840552,
+      "street_address": "Kerklaan, 9-b",
+      "postcode": "1251 JR",
+      "locality": "Laren",
+      "region": "",
+      "country_code": "NL",
+      "phone": "+31646391991",
+      "website": "https://localistico.com/?utm_content=Localistico+Benelux+HQ&utm_medium=4bbf0798-00c8-47f2-934e-cd1be0df8808&utm_source=store_pages",
+      "summary": null,
+      "short_summary": "Taking Customers from Search to Store.\n\nDrive more traffic to your locations and get better insights - in the simplest way.",
+      "closed": false,
+      "created_at": "2019-05-16 08:51:59 UTC",
+      "updated_at": "2019-09-03 11:47:29 UTC",
+      "location_external_id": "localistico-benelux",
+      "slug": "localistico-benelux-hq",
+      "lnglat": "POINT (5.22840552 52.25766739)",
+      "custom_attribute_place_id": "ChIJfcqmaXAVxkcRbt9aB3Fk_PM",
+      "links": [
+        {
+          "url": "https://maps.google.com/maps?cid=17581037481965051758",
+          "owned": true,
+          "platform": "google"
+        },
+        {
+          "url": "https://foursquare.com/v/localistico-benelux-hq/5cdd14ac993981002c8dd07f",
+          "owned": false,
+          "platform": "foursquare"
+        },
+        {
+          "url": "https://office.localistico.com/localistico-benelux-hq",
+          "owned": true,
+          "platform": "store_pages"
+        },
+        {
+          "url": "https://www.facebook.com/Localistico-114928856536936/",
+          "owned": true,
+          "platform": "facebook"
+        },
+        {
+          "url": "http://www.yelp.com/biz/localistico-laren",
+          "owned": false,
+          "platform": "yelp"
+        }
+      ],
+      "hours": {
+        "mon": [
+          {
+            "to": "17:00",
+            "from": "09:00"
+          }
+        ],
+        "tue": [
+          {
+            "to": "17:00",
+            "from": "09:00"
+          }
+        ],
+        "wed": [
+          {
+            "to": "17:00",
+            "from": "09:00"
+          }
+        ],
+        "thu": [
+          {
+            "to": "17:00",
+            "from": "09:00"
+          }
+        ],
+        "fri": [
+          {
+            "to": "17:00",
+            "from": "09:00"
+          }
+        ]
+      },
+      "images": [
+        {
+          "role": "main",
+          "alt": null,
+          "label": null,
+          "original": "https://office.localistico.com/assets/locationimage/0e7e954b-5cfe-4dcd-b7c3-9233781d59b5/image/original-7150c900d16fc8a3f2c951868268ea91.jpg",
+          "thumb": "https://office.localistico.com/assets/locationimage/0e7e954b-5cfe-4dcd-b7c3-9233781d59b5/image/thumb-74ac7b24b502af7e59a282b42451b3ab.jpg",
+          "small": "https://office.localistico.com/assets/locationimage/0e7e954b-5cfe-4dcd-b7c3-9233781d59b5/image/small-653471618ffe90fc97430659f33bb957.jpg",
+          "square": "https://office.localistico.com/assets/locationimage/0e7e954b-5cfe-4dcd-b7c3-9233781d59b5/image/square-8880168d04fda369a0a77510f529fc55.jpg",
+          "landscape": "https://office.localistico.com/assets/locationimage/0e7e954b-5cfe-4dcd-b7c3-9233781d59b5/image/landscape-658f9c5737cd150ec7db35e02bd17dd8.jpg"
+        }
+      ],
+      "full_address": "Kerklaan, 9-b<br />\n1251 JR Laren<br />\nNL",
+      "national_phone_number": "06 46391991",
+      "international_phone_number": "+31 6 46391991",
+      "pages": [
+        {
+          "url": "https://office.localistico.com/localistico-benelux-hq",
+          "template_name": "Localistico Store Page",
+          "template_id": "c7c76f36-8ea4-4bdc-8f4e-44986f988aa1"
+        }
+      ],
+      "distance": 1481887.9580465637,
+      "distance_human": "1480 km",
+      "current_template_url": "https://office.localistico.com/localistico-benelux-hq"
+    }
+  ],
+  "areas": [
+    {
+      "name": "Centro",
+      "display_name": "Centro, Madrid, Área metropolitana de Madrid y Corredor del Henares, Comunidad de Madrid, 28001, España",
+      "type": "locality",
+      "slug": "centro",
+      "pages": [
+
+      ]
+    },
+    {
+      "name": "Comunidad de Madrid",
+      "display_name": "Comunidad de Madrid, España",
+      "type": "region",
+      "slug": "comunidad-de-madrid",
+      "pages": [
+
+      ]
+    },
+    {
+      "name": "España",
+      "display_name": "España",
+      "type": "country",
+      "slug": "espana",
+      "pages": [
+
+      ]
+    }
+  ]
+}

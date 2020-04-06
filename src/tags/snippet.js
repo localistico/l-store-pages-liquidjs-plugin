@@ -1,8 +1,6 @@
 const DEFAULT_SNIPPETS_PATH = 'snippets';
 
-// eslint-disable-next-line no-useless-escape
-const paramsRE = /([\w-]+)\s*=\s*(?:("[^"\\]*(?:\\.[^"\\]*)*")|('[^'\\]*(?:\\.[^'\\]*)*')|([\w\.-]+))/g;
-const keyParamsRE = /^([^\s]+)(.*)/;
+const { paramsRE, keyParamsRE } = require('./../constants/regexps');
 
 // Usage: {% snippet name params %}
 const snippet = {
