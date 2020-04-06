@@ -53,7 +53,7 @@ const location_json_ld = {
       },
       'identifier': location.id,
       'name': escapeAndStrip(this.params['name'] || location.name, engine),
-      'image': locationImage(location, business), // TODO:
+      'image': locationImage(location, business),
       'telephone': escapeAndStrip(location.phone, engine),
       'description': formatLocationDescription(location, this.params['description'], engine),
       'url': engine.parseAndRenderSync('{% page_url store-page location.id %}'),
@@ -81,9 +81,9 @@ function formatLocationLinks(location) {
 }
 
 function locationImage(location, business) {
-  const mainImage = location.images.find((image) => image.role === 'main');
-  const businessLogo = business.logo['original'];
-  return mainImage.original || businessLogo.original;
+  const images = location.images || [];
+  const image = images.find((image) => image.role === 'main') || business.logo;
+  return image.original || '';
 }
 
 function formatOpeningHours(location){
