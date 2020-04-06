@@ -1,6 +1,6 @@
 {
   "@context": "http://schema.org",
-  "@id": "/store-page",
+  "@id": "/my-awesome-template",
   "@type": "ExampleType",
   "address": {
     "@type": "PostalAddress",
@@ -15,7 +15,7 @@
   "image": "https://office.localistico.com/assets/locationimage/5270fa56-93a7-4c1e-9030-9c9499b6f0f3/image/original-04cf4e7491d596831f6ca78d1a5e2222.jpg",
   "telephone": "+34965020305",
   "description": "my custom description",
-  "url": "/store-page",
+  "url": "/my-awesome-template",
   "openingHoursSpecification": [{
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "Monday",

@@ -41,7 +41,7 @@ const location_json_ld = {
 
     return JSON.stringify({
       '@context': 'http://schema.org',
-      '@id': engine.parseAndRenderSync('{% page_url store-page location.id %}'),
+      '@id': formatLocationUrl(location, this.params['template_key'] || 'store-page', engine ),
       '@type': this.params['type'] || 'LocalBusiness',
       'address': {
         '@type': 'PostalAddress',
@@ -56,7 +56,7 @@ const location_json_ld = {
       'image': locationImage(location, business),
       'telephone': escapeAndStrip(location.phone, engine),
       'description': formatLocationDescription(location, this.params['description'], engine),
-      'url': engine.parseAndRenderSync('{% page_url store-page location.id %}'),
+      'url': formatLocationUrl(location, this.params['template_key'] || 'store-page', engine ),
       'openingHoursSpecification': formatOpeningHours(location),
       'sameAs': formatLocationLinks(location),
       'geo': {
@@ -67,6 +67,10 @@ const location_json_ld = {
     });
   }
 };
+
+function formatLocationUrl(location, template_key = 'store-page', engine) {
+  return engine.parseAndRenderSync(`{% page_url ${template_key} location.id %}`)
+}
 
 function formatLocationDescription(location, description, engine) {
    const desc = description || location.short_summary || location.summary;
