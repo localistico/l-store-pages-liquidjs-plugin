@@ -6,8 +6,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const paramsRE = require('./../constants/regexps').paramsRE;
-const keyParamsRE = require('./../constants/regexps').keyParamsRE;
+const { paramsRE, keyParamsRE } = require('./../constants/regexps');
 
 const DEFAULT_LOCATION_TYPE = 'LocalBusiness';
 

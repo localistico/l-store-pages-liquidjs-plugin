@@ -1,7 +1,6 @@
 const DEFAULT_SNIPPETS_PATH = 'snippets';
 
-const paramsRE = require('./../constants/regexps').paramsRE;
-const keyParamsRE = require('./../constants/regexps').keyParamsRE;
+const { paramsRE, keyParamsRE } = require('./../constants/regexps');
 
 // Usage: {% snippet name params %}
 const snippet = {
