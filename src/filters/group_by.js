@@ -14,6 +14,7 @@ const group_by = function(input, property) {
       groups.push(group);
     }
   });
+  groups.forEach((group) => group.size = group.items.length );
   return groups;
 };
 

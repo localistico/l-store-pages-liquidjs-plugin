@@ -142,10 +142,10 @@ describe('Filters', () => {
           city: 'madrid',
         },
       ];
-      const html = await liquid.parseAndRender('{% assign grouped_items = items | group_by:"city" %}{% for group_item in grouped_items %}{{ group_item.name }}({% for item in group_item.items %}{{ item.name }}/{% endfor%}) - {% endfor%}', {
+      const html = await liquid.parseAndRender('{% assign grouped_items = items | group_by:"city" %}{% for group_item in grouped_items %}{{ group_item.name }}({% for item in group_item.items %}{{ item.name }}/{% endfor%}{{group_item.size}}) - {% endfor%}', {
         items
       });
-      expect(html).toBe('madrid(john/celia/paco/) - london(peter/) - málaga(jose/) - soria(javi/) - ');
+      expect(html).toBe('madrid(john/celia/paco/3) - london(peter/1) - málaga(jose/1) - soria(javi/1) - ');
     });
   });
 
