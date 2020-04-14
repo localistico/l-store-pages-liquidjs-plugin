@@ -27,7 +27,7 @@ const snippet = {
     };
     const templates = await this.liquid.getTemplate(filepath, ctx.opts.root);
     ctx.push(scope);
-    const html = await this.liquid.renderer.renderTemplates(templates, scope);
+    const html = await this.liquid.renderer.renderTemplates(templates, ctx);
     ctx.pop(scope);
     return html;
   }
