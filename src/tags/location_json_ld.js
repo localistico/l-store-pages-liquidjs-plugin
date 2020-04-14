@@ -73,7 +73,7 @@ function formatLocationUrl(location, template_key = 'store-page', engine) {
 }
 
 function formatLocationDescription(location, description, engine) {
-   const desc = description || location.short_summary || location.summary;
+   const desc = description || location.short_summary || location.summary || '';
    return engine.parseAndRenderSync(`{{ "${desc}" | newline_to_br | strip_newlines | replace: '<br /><br />', ' ' | replace: '<br />', ' ' | strip_html | escape | strip }}`);
 }
 
@@ -106,7 +106,8 @@ function formatOpeningHours(location){
 }
 
 function escapeAndStrip(str, engine) {
-  return engine.parseAndRenderSync(`{{ "${str}" | escape | strip }}`);
+  const strToRender = str || '';
+  return engine.parseAndRenderSync(`{{ "${strToRender}" | escape | strip }}`);
 }
 
 module.exports = location_json_ld;
