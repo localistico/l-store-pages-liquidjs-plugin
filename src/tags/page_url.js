@@ -6,7 +6,7 @@ const page_url = {
     this.model = tagToken.args.split(' ')[1]; // model
   },
   // eslint-disable-next-line no-unused-vars
-  render: function(scope, hash) {
+  render: function(ctx, hash) {
     return `/${this.name}`;
   }
 };

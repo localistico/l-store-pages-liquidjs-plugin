@@ -10,10 +10,10 @@ const asset_path = {
     this.str = tagToken.args; // name
   },
   // eslint-disable-next-line no-unused-vars
-  render: function(scope, hash) {
-    const assets_base_url = scope.environments.assets_base_url || DEFAULT_ASSETS_BASE_URL;
-    const assets_path = scope.environments.assets_content_path || DEFAULT_ASSETS_CONTENT_PATH;
-    const filepath = `${scope.opts.root[0]}/${assets_path}/${this.str}`;
+  render: function(ctx, hash) {
+    const assets_base_url = ctx.environments.assets_base_url || DEFAULT_ASSETS_BASE_URL;
+    const assets_path = ctx.environments.assets_content_path || DEFAULT_ASSETS_CONTENT_PATH;
+    const filepath = `${ctx.opts.root[0]}/${assets_path}/${this.str}`;
     fs.readFileSync(filepath);
     return `${assets_base_url}/${this.str}`;
   }

@@ -11,10 +11,10 @@ const asset_content = {
     this.str = tagToken.args; // name
   },
   // eslint-disable-next-line no-unused-vars
-  render: async function(scope, hash) {
+  render: async function(ctx, hash) {
     const extname = path.extname(this.str);
-    const assets_content_path = scope.environments.assets_content_path || DEFAULT_ASSETS_CONTENT_PATH;
-    const filepath = `${scope.opts.root[0]}/${assets_content_path}/${this.str}`;
+    const assets_content_path = ctx.environments.assets_content_path || DEFAULT_ASSETS_CONTENT_PATH;
+    const filepath = `${ctx.opts.root[0]}/${assets_content_path}/${this.str}`;
     if (ALLOWED_FILE_EXT.includes(extname)) {
       return fs.readFileSync(filepath);
     } else {

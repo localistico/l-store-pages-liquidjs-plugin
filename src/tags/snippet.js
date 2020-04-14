@@ -11,24 +11,24 @@ const snippet = {
     this.params = match[2].trim();
   },
   // eslint-disable-next-line no-unused-vars
-  render: async function(scope, hash) {
-    const filepath = `${DEFAULT_SNIPPETS_PATH}/${this.key}${scope.opts.extname}`;
+  render: async function(ctx, hash) {
+    const filepath = `${DEFAULT_SNIPPETS_PATH}/${this.key}${ctx.opts.extname}`;
     let snippet = {};
 
     if (this.params) {
       let match;
       // eslint-disable-next-line no-cond-assign
       while (match = paramsRE.exec(this.params)) {
-        snippet[match[1]] = await this.liquid.evalValue(match[2] || match[3] || match[4], scope);
+        snippet[match[1]] = await this.liquid.evalValue(match[2] || match[3] || match[4], ctx);
       }
     }
-    let ctx = {
+    let scope = {
       snippet
     };
-    const templates = await this.liquid.getTemplate(filepath, scope.opts.root);
-    scope.push(ctx);
+    const templates = await this.liquid.getTemplate(filepath, ctx.opts.root);
+    ctx.push(scope);
     const html = await this.liquid.renderer.renderTemplates(templates, scope);
-    scope.pop(ctx);
+    ctx.pop(scope);
     return html;
   }
 };
