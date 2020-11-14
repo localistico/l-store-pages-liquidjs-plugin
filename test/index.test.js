@@ -1,16 +1,16 @@
-const Liquid = require('liquidjs');
-const plugin = require('../src/index');
-const path = require('path');
-const fs = require('fs');
+const Liquid = require('liquidjs')
+const plugin = require('../src/index')
+const path = require('path')
+const fs = require('fs')
 
-let liquid;
+let liquid
 beforeAll(function () {
   liquid = new Liquid.Liquid({
     root: path.resolve(__dirname, './stub'),
     extname: '.liquid',
-  });
-  liquid.plugin(plugin);
-});
+  })
+  liquid.plugin(plugin)
+})
 
 test('should return function', async () => {
   expect(plugin).toBeInstanceOf(Function)
@@ -19,82 +19,104 @@ test('should return function', async () => {
 describe('Tags', () => {
   describe('asset_content', () => {
     test('asset_content should render the content of a css file', async () => {
-      const html = await liquid.parseAndRender('{% asset_content style.css %}');
-      expect(html).toBe('h1 { color: red; }');
-    });
+      const html = await liquid.parseAndRender('{% asset_content style.css %}')
+      expect(html).toBe('h1 { color: red; }')
+    })
     test('asset_content should render the content of a js file', async () => {
-      const html = await liquid.parseAndRender('{% asset_content script.js %}');
-      expect(html).toBe('console.log(\'javascript works!\');');
-    });
+      const html = await liquid.parseAndRender('{% asset_content script.js %}')
+      expect(html).toBe("console.log('javascript works!');")
+    })
     test('asset_content should render the content of a svg file', async () => {
-      const html = await liquid.parseAndRender('{% asset_content draw.svg %}');
-      expect(html).toBe('<svg></svg>');
-    });
+      const html = await liquid.parseAndRender('{% asset_content draw.svg %}')
+      expect(html).toBe('<svg></svg>')
+    })
     test('should throw that file has a not allowed extension', async function () {
-      expect(liquid.parseAndRender('{% asset_content pic.jpg %}'))
-        .rejects.toThrow();
-    });
+      expect(
+        liquid.parseAndRender('{% asset_content pic.jpg %}')
+      ).rejects.toThrow()
+    })
     test('should throw that the file was not found', async function () {
-      expect(liquid.parseAndRender('{% asset_content unknown.css %}'))
-        .rejects.toThrow();
-    });
-  });
+      expect(
+        liquid.parseAndRender('{% asset_content unknown.css %}')
+      ).rejects.toThrow()
+    })
+  })
 
   describe('asset_path', () => {
     test('should render a correct asset_path', async () => {
-      const html = await liquid.parseAndRender('{% asset_path draw.svg %}');
-      expect(html).toBe('/assets/draw.svg');
-    });
+      const html = await liquid.parseAndRender('{% asset_path draw.svg %}')
+      expect(html).toBe('/assets/draw.svg')
+    })
     test('should throw that the asset file was not found', async function () {
-      expect(liquid.parseAndRender('{% asset_content unknown.css %}'))
-        .rejects.toThrow();
-    });
-  });
+      expect(
+        liquid.parseAndRender('{% asset_content unknown.css %}')
+      ).rejects.toThrow()
+    })
+  })
 
   describe('page_url', () => {
     test('should render a correct page_url', async () => {
-      const html = await liquid.parseAndRender('{% page_url store-locator %}');
-      expect(html).toBe('/store-locator');
-    });
-  });
+      const html = await liquid.parseAndRender('{% page_url store-locator %}')
+      expect(html).toBe('/store-locator')
+    })
+  })
 
   describe('snippet', function () {
     test('should render the snippet content', async function () {
-      const html = await liquid.parseAndRender('{% snippet header %}');
-      expect(html).toBe('<h1>This is the header</h1>');
-    });
+      const html = await liquid.parseAndRender('{% snippet header %}')
+      expect(html).toBe('<h1>This is the header</h1>')
+    })
     test('should throw if snippet does not exist', async function () {
-      expect(liquid.parseAndRender('{% snippet missing %}'))
-        .rejects.toThrow();
-    });
-  });
+      expect(liquid.parseAndRender('{% snippet missing %}')).rejects.toThrow()
+    })
+  })
 
   describe('location_json_ld', function () {
-    let scope;
+    let scope
 
     beforeEach(() => {
-      scope = JSON.parse(fs.readFileSync(path.resolve(__dirname, './data/store.json')), 'utf-8');
-    });
+      scope = JSON.parse(
+        fs.readFileSync(path.resolve(__dirname, './data/store.json')),
+        'utf-8'
+      )
+    })
 
     test('should render the jsonld content', async function () {
-      const jsonldMockup = JSON.parse(fs.readFileSync(path.resolve(__dirname, './stub/location-json-ld.json')), 'utf-8');
-      const jsonld = JSON.parse(await liquid.parseAndRender('{% location_json_ld location.id %}', scope));
-      expect(jsonld).toStrictEqual(jsonldMockup);
-    });
+      const jsonldMockup = JSON.parse(
+        fs.readFileSync(
+          path.resolve(__dirname, './stub/location-json-ld.json')
+        ),
+        'utf-8'
+      )
+      const jsonld = JSON.parse(
+        await liquid.parseAndRender('{% location_json_ld location.id %}', scope)
+      )
+      expect(jsonld).toStrictEqual(jsonldMockup)
+    })
 
     test('should render the jsonld content overriding params', async function () {
-      const jsonldMockup = JSON.parse(fs.readFileSync(path.resolve(__dirname, './stub/location-json-ld-with-params.json')), 'utf-8');
-      const jsonld = JSON.parse(await liquid.parseAndRender('{% location_json_ld location.id  name=\'Example Name\' type=\'ExampleType\' description=\'my custom description\' template_key=\'my-awesome-template\' %}', scope));
-      expect(jsonld).toStrictEqual(jsonldMockup);
-    });
-
-  });
-});
+      const jsonldMockup = JSON.parse(
+        fs.readFileSync(
+          path.resolve(__dirname, './stub/location-json-ld-with-params.json')
+        ),
+        'utf-8'
+      )
+      const jsonld = JSON.parse(
+        await liquid.parseAndRender(
+          "{% location_json_ld location.id  name='Example Name' type='ExampleType' description='my custom description' template_key='my-awesome-template' %}",
+          scope
+        )
+      )
+      expect(jsonld).toStrictEqual(jsonldMockup)
+    })
+  })
+})
 
 describe('Filters', () => {
   describe('sort', () => {
     test('should render sorted items', async () => {
-      const items = [{
+      const items = [
+        {
           distance: 3,
           name: 'three',
         },
@@ -106,13 +128,16 @@ describe('Filters', () => {
           distance: 2,
           name: 'two',
         },
-      ];
-      const html = await liquid.parseAndRender('{% assign sorted_items = items | sort:"distance" %}{% for item in sorted_items %}{{ item.name }}/{% endfor%}', {
-        items
-      });
-      expect(html).toBe('one/two/three/');
-    });
-  });
+      ]
+      const html = await liquid.parseAndRender(
+        '{% assign sorted_items = items | sort:"distance" %}{% for item in sorted_items %}{{ item.name }}/{% endfor%}',
+        {
+          items,
+        }
+      )
+      expect(html).toBe('one/two/three/')
+    })
+  })
 
   describe('group_by', () => {
     test('should render grouped items', async () => {
@@ -141,13 +166,18 @@ describe('Filters', () => {
           name: 'paco',
           city: 'madrid',
         },
-      ];
-      const html = await liquid.parseAndRender('{% assign grouped_items = items | group_by:"city" %}{% for group_item in grouped_items %}{{ group_item.name }}({% for item in group_item.items %}{{ item.name }}/{% endfor%}{{group_item.size}}) - {% endfor%}', {
-        items
-      });
-      expect(html).toBe('madrid(john/celia/paco/3) - london(peter/1) - málaga(jose/1) - soria(javi/1) - ');
-    });
-  });
+      ]
+      const html = await liquid.parseAndRender(
+        '{% assign grouped_items = items | group_by:"city" %}{% for group_item in grouped_items %}{{ group_item.name }}({% for item in group_item.items %}{{ item.name }}/{% endfor%}{{group_item.size}}) - {% endfor%}',
+        {
+          items,
+        }
+      )
+      expect(html).toBe(
+        'madrid(john/celia/paco/3) - london(peter/1) - málaga(jose/1) - soria(javi/1) - '
+      )
+    })
+  })
 
   describe('where', () => {
     test('should render filtered items by where', async () => {
@@ -176,13 +206,16 @@ describe('Filters', () => {
           name: 'paco',
           city: 'madrid',
         },
-      ];
-      const html = await liquid.parseAndRender('{% assign filtered_items = items | where:"city","madrid" %}{% for item in filtered_items %}{{ item.name }}/{% endfor%}', {
-        items
-      });
-      expect(html).toBe('john/celia/paco/');
-    });
-  });
+      ]
+      const html = await liquid.parseAndRender(
+        '{% assign filtered_items = items | where:"city","madrid" %}{% for item in filtered_items %}{{ item.name }}/{% endfor%}',
+        {
+          items,
+        }
+      )
+      expect(html).toBe('john/celia/paco/')
+    })
+  })
 
   describe('where_exp', () => {
     test('should render filtered items by where_exp', async () => {
@@ -211,11 +244,14 @@ describe('Filters', () => {
           city: 'newyork',
           distance: 33,
         },
-      ];
-      const html = await liquid.parseAndRender('{% assign filtered_items = items | where_exp:"item","item.distance > 0"  | where_exp:"item","item.distance < 10" %}{% for item in filtered_items %}{{ item.city }}/{% endfor%}', {
-        items
-      });
-      expect(html).toBe('málaga/barcelona/soria/');
-    });
-  });
-});
+      ]
+      const html = await liquid.parseAndRender(
+        '{% assign filtered_items = items | where_exp:"item","item.distance > 0"  | where_exp:"item","item.distance < 10" %}{% for item in filtered_items %}{{ item.city }}/{% endfor%}',
+        {
+          items,
+        }
+      )
+      expect(html).toBe('málaga/barcelona/soria/')
+    })
+  })
+})
