@@ -16,9 +16,10 @@ const snippet = {
   // eslint-disable-next-line no-unused-vars
   render: async function (ctx, hash) {
     const theme_snippet_filepath = `${DEFAULT_SNIPPETS_PATH}/${this.key}${ctx.opts.extname}`
-    const remote_snippet_filepath = `${ctx.opts.root}/${DEFAULT_REMOTE_SNIPPETS_PATH}/${this.key}${ctx.opts.extname}`
-
-    const snippet_filepath_to_render = fs.existsSync(remote_snippet_filepath)
+    const remote_snippet_filepath = `${DEFAULT_REMOTE_SNIPPETS_PATH}/${this.key}${ctx.opts.extname}`
+    const snippet_filepath_to_render = fs.existsSync(
+      `${ctx.opts.root}/${remote_snippet_filepath}`
+    )
       ? remote_snippet_filepath
       : theme_snippet_filepath
 
