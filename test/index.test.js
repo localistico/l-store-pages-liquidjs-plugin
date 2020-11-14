@@ -66,6 +66,10 @@ describe('Tags', () => {
       const html = await liquid.parseAndRender('{% snippet header %}')
       expect(html).toBe('<h1>This is the header</h1>')
     })
+    test('should render remote snippet content', async function () {
+      const html = await liquid.parseAndRender('{% snippet remote_footer %}')
+      expect(html).toBe('<h1>This is the remote footer</h1>')
+    })
     test('should throw if snippet does not exist', async function () {
       expect(liquid.parseAndRender('{% snippet missing %}')).rejects.toThrow()
     })

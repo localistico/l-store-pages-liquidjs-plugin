@@ -1,4 +1,7 @@
+const fs = require('fs')
+
 const DEFAULT_SNIPPETS_PATH = 'snippets'
+const DEFAULT_REMOTE_SNIPPETS_PATH = 'remote_snippets'
 
 const { paramsRE, keyParamsRE } = require('./../constants/regexps')
 
@@ -12,7 +15,13 @@ const snippet = {
   },
   // eslint-disable-next-line no-unused-vars
   render: async function (ctx, hash) {
-    const filepath = `${DEFAULT_SNIPPETS_PATH}/${this.key}${ctx.opts.extname}`
+    const theme_snippet_filepath = `${DEFAULT_SNIPPETS_PATH}/${this.key}${ctx.opts.extname}`
+    const remote_snippet_filepath = `${ctx.opts.root}/${DEFAULT_REMOTE_SNIPPETS_PATH}/${this.key}${ctx.opts.extname}`
+
+    const snippet_filepath_to_render = fs.existsSync(remote_snippet_filepath)
+      ? remote_snippet_filepath
+      : theme_snippet_filepath
+
     let snippet = {}
 
     if (this.params) {
@@ -28,7 +37,10 @@ const snippet = {
     let scope = {
       snippet,
     }
-    const templates = await this.liquid.getTemplate(filepath, ctx.opts.root)
+    const templates = await this.liquid.getTemplate(
+      snippet_filepath_to_render,
+      ctx.opts.root
+    )
     ctx.push(scope)
     const html = await this.liquid.renderer.renderTemplates(templates, ctx)
     ctx.pop(scope)
