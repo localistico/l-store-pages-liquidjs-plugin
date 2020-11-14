@@ -15,6 +15,7 @@ module.exports = function () {
   this.registerTag('snippet', require('./tags/snippet'))
   this.registerTag('asset_content', require('./tags/asset_content'))
   this.registerTag('page_url', require('./tags/page_url'))
+  this.registerTag('find_page_url', require('./tags/find_page_url'))
   this.registerTag('location_json_ld', require('./tags/location_json_ld'))
 
   // Filters

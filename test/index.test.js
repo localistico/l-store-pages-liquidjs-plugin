@@ -61,6 +61,15 @@ describe('Tags', () => {
     })
   })
 
+  describe('find_page_url', () => {
+    test('should render a correct find_page_url', async () => {
+      const html = await liquid.parseAndRender(
+        '{% find_page_url store-locator %}'
+      )
+      expect(html).toBe('/store-locator')
+    })
+  })
+
   describe('snippet', function () {
     test('should render the snippet content', async function () {
       const html = await liquid.parseAndRender('{% snippet header %}')
