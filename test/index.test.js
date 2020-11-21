@@ -277,7 +277,7 @@ describe('Filters', () => {
           distance,
         }
       )
-      expect(html).toBe('1567.70 km')
+      expect(html).toBe('1.6 km')
     })
     test('should render distance as human meters', async () => {
       const distance = 567.1569857
