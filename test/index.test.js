@@ -267,4 +267,48 @@ describe('Filters', () => {
       expect(html).toBe('málaga/barcelona/soria/')
     })
   })
+
+  describe('distance_to_human', () => {
+    test('should render distance as human in km', async () => {
+      const distance = 1567.6962645744857
+      const html = await liquid.parseAndRender(
+        '{{ distance | distance_to_human }}',
+        {
+          distance,
+        }
+      )
+      expect(html).toBe('1567.70 km')
+    })
+    test('should render distance as human meters', async () => {
+      const distance = 567.1569857
+      const html = await liquid.parseAndRender(
+        '{{ distance | distance_to_human }}',
+        {
+          distance,
+        }
+      )
+      expect(html).toBe('567 m')
+    })
+  })
+
+  describe('json', () => {
+    test('should render json', async () => {
+      const obj = {
+        field: 'value',
+        another_field: 1234,
+        arr: [
+          {
+            title: 'me',
+            o: {},
+          },
+        ],
+      }
+      const html = await liquid.parseAndRender('{{ obj | json }}', {
+        obj,
+      })
+      expect(html).toBe(
+        '{"field":"value","another_field":1234,"arr":[{"title":"me","o":{}}]}'
+      )
+    })
+  })
 })
