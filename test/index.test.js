@@ -1,7 +1,8 @@
 const Liquid = require('liquidjs')
-const plugin = require('../src/index')
 const path = require('path')
 const fs = require('fs')
+
+const plugin = require('../src/').plugin
 
 let liquid
 beforeAll(function () {

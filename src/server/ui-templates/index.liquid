@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Templates within theme/</title>
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
+        background-color: #FFF;
+        text-rendering: optimizeLegibility;
+        -webkit-text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 40px;
+      }
+
+      h1 {
+        font-size: 16px;
+        font-weight: normal;
+        padding-left: 4px;
+        margin-bottom: 20px;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+      }
+
+      th {
+        text-align: left;
+      }
+
+      th,
+      td {
+        padding: 8px 4px;
+      }
+
+      a {
+        color: #0366d6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Templates within <strong>theme/</strong></h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Url</th>
+          <th>Template</th>
+          <th>Key</th>
+          <th>Type</th>
+          <th>Content-Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for template in templates %}
+          <tr>
+            <td><a href="/{{template.key}}">{{template.name}}</a></td>
+            <td>{{template.url}}</td>
+            <td>{{template.template}}</td>
+            <td>{{template.key}}</td>
+            <td>{{template.type}}</td>
+            <td>{{template.content_type}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
