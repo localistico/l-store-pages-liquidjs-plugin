@@ -13,8 +13,8 @@
   "author": "contact@localistico.com",
   "license": "MIT",
   "dependencies": {
-    "eslint": "^6.4.0",
-    "jest": "^24.9.0",
-    "liquidjs": "^9.0.0"
+    "eslint": "^7.19.0",
+    "jest": "^26.6.3",
+    "liquidjs": "^9.22.1"
   }
 }
