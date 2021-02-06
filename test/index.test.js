@@ -76,6 +76,14 @@ describe('Tags', () => {
       const html = await liquid.parseAndRender('{% snippet header %}')
       expect(html).toBe('<h1>This is the header</h1>')
     })
+    test('should render the snippet content with params', async function () {
+      const html = await liquid.parseAndRender(
+        '{% snippet parameters value="myValue" value2=2 %}'
+      )
+      expect(html).toBe(
+        '<h1>This is the parameters snippet with value=myValue and value2=2</h1>'
+      )
+    })
     test('should render remote snippet content', async function () {
       const html = await liquid.parseAndRender('{% snippet remote_footer %}')
       expect(html).toBe('<h1>This is the remote footer</h1>')
