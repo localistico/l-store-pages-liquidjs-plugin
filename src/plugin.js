@@ -22,10 +22,8 @@ module.exports = function () {
   this.registerFilter('group_by', require('./filters/group_by'))
   this.registerFilter('where', require('./filters/where'))
   this.registerFilter('where_exp', require('./filters/where_exp'))
-  this.registerFilter('sort', require('./filters/sort'))
   this.registerFilter(
     'distance_to_human',
     require('./filters/distance_to_human')
   )
-  this.registerFilter('json', require('./filters/json'))
 }
