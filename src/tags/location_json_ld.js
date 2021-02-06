@@ -36,8 +36,8 @@ const location_json_ld = {
   // eslint-disable-next-line no-unused-vars
   render: async function (ctx, hash) {
     const engine = this.liquid
-    const business = ctx.get('business')
-    const location = ctx.get('location')
+    const business = ctx.get(['business'])
+    const location = ctx.get(['location'])
 
     return JSON.stringify({
       '@context': 'http://schema.org',
