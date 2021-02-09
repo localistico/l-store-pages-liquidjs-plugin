@@ -7,7 +7,7 @@ const plugin = require('../src/').plugin
 let liquid
 beforeAll(function () {
   liquid = new Liquid.Liquid({
-    root: path.resolve(__dirname, './stub'),
+    root: path.resolve(__dirname, './stub/theme'),
     extname: '.liquid',
   })
   liquid.plugin(plugin)
@@ -98,7 +98,7 @@ describe('Tags', () => {
 
     beforeEach(() => {
       scope = JSON.parse(
-        fs.readFileSync(path.resolve(__dirname, './data/store.json')),
+        fs.readFileSync(path.resolve(__dirname, './stub/data/store.json')),
         'utf-8'
       )
     })
@@ -106,7 +106,7 @@ describe('Tags', () => {
     test('should render the jsonld content', async function () {
       const jsonldMockup = JSON.parse(
         fs.readFileSync(
-          path.resolve(__dirname, './stub/location-json-ld.json')
+          path.resolve(__dirname, './stub/fixtures/location-json-ld.json')
         ),
         'utf-8'
       )
@@ -119,7 +119,10 @@ describe('Tags', () => {
     test('should render the jsonld content overriding params', async function () {
       const jsonldMockup = JSON.parse(
         fs.readFileSync(
-          path.resolve(__dirname, './stub/location-json-ld-with-params.json')
+          path.resolve(
+            __dirname,
+            './stub/fixtures/location-json-ld-with-params.json'
+          )
         ),
         'utf-8'
       )
