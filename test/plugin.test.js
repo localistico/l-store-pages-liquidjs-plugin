@@ -341,4 +341,38 @@ describe('Filters', () => {
       expect(html.trim()).toBe('foo@bar.baz, bar@baz.qux')
     })
   })
+
+  describe('parse_csv', () => {
+    test('converts to a two-dimension Array object', async () => {
+      const liquidMarkup = `
+                {% capture csv_string %}
+                  Name A,ID,Date
+                  #1234,1234567890,2021/03/23
+                  #1235,1234567891,2021/03/24
+                {% endcapture %}
+                {% assign csv_rows = csv_string | parse_csv %}
+                {% for row in csv_rows %}-- {{ row[0] }} -- {{ row[1] }} -- {{ row[2] }}{% endfor %}
+              `.trim()
+      const html = await liquid.parseAndRender(liquidMarkup)
+      expect(html.trim()).toBe(
+        '-- Name A -- ID -- Date-- #1234 -- 1234567890 -- 2021/03/23-- #1235 -- 1234567891 -- 2021/03/24'
+      )
+    })
+
+    test('parses csv string', async () => {
+      const liquidMarkup = `
+                {% capture csv_string %}
+                  Name A,ID,Date
+                  #1234,1234567890,2021/03/23
+                  #1235,1234567891,2021/03/24
+                {% endcapture %}
+                {% assign csv_rows = csv_string | parse_csv: headers: true %}
+                {{ csv_rows | json }}
+              `.trim()
+      const html = await liquid.parseAndRender(liquidMarkup)
+      expect(html.trim()).toBe(
+        '[{"Name A":"#1234","ID":"1234567890","Date":"2021/03/23"},{"Name A":"#1235","ID":"1234567891","Date":"2021/03/24"}]'
+      )
+    })
+  })
 })

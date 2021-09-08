@@ -13,6 +13,7 @@
   "author": "contact@localistico.com",
   "license": "MIT",
   "dependencies": {
+    "csv-parse": "^4.16.3",
     "eslint": "^7.19.0",
     "jest": "^26.6.3",
     "liquidjs": "^9.22.1"

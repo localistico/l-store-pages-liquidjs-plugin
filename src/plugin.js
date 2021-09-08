@@ -27,4 +27,5 @@ module.exports = function () {
     require('./filters/distance_to_human')
   )
   this.registerFilter('parse_json', require('./filters/parse_json'))
+  this.registerFilter('parse_csv', require('./filters/parse_csv'))
 }
