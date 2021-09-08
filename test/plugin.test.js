@@ -303,6 +303,7 @@ describe('Filters', () => {
     })
   })
 
+  // Is testing the built-in filter in LiquidJS for backwards compatibility
   describe('json', () => {
     test('should render json', async () => {
       const obj = {
@@ -321,6 +322,23 @@ describe('Filters', () => {
       expect(html).toBe(
         '{"field":"value","another_field":1234,"arr":[{"title":"me","o":{}}]}'
       )
+    })
+  })
+
+  describe('parse_json', () => {
+    test('parses json string', async () => {
+      const liquidMarkup = `
+            {% capture json_string %} \
+              [
+                {"id":"12345","email":"foo@bar.baz"},
+                {"id":"67890","email":"bar@baz.qux"}
+              ]
+            {% endcapture %}
+            {% assign json_objects = json_string | parse_json %}
+            {{ json_objects | map: "email" | join: ", " }}
+          `
+      const html = await liquid.parseAndRender(liquidMarkup)
+      expect(html.trim()).toBe('foo@bar.baz, bar@baz.qux')
     })
   })
 })
