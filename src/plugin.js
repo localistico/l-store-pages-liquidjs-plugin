@@ -17,6 +17,7 @@ module.exports = function () {
   this.registerTag('page_url', require('./tags/page_url'))
   this.registerTag('find_page_url', require('./tags/find_page_url'))
   this.registerTag('location_json_ld', require('./tags/location_json_ld'))
+  this.registerTag('content_for_head', require('./tags/content_for_head'))
 
   // Filters
   this.registerFilter('group_by', require('./filters/group_by'))
@@ -28,4 +29,5 @@ module.exports = function () {
   )
   this.registerFilter('parse_json', require('./filters/parse_json'))
   this.registerFilter('parse_csv', require('./filters/parse_csv'))
+  this.registerFilter('t', require('./filters/t'))
 }

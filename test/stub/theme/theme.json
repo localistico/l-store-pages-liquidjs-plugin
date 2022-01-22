@@ -1,0 +1,11 @@
+{
+  "name": "Stub Theme",
+  "default_locale": "en",
+  "published_locales": [
+    "en", "es"
+  ],
+  "templates": [
+  ],
+  "variables": {
+  }
+}

@@ -135,6 +135,15 @@ describe('Tags', () => {
       expect(jsonld).toStrictEqual(jsonldMockup)
     })
   })
+
+  describe('content_for_head', () => {
+    test('returns alternate links for languages', async () => {
+      const html = await liquid.parseAndRender('{% content_for_head %}')
+      expect(html).toBe(
+        `<link rel="alternate" hreflang="x-default" href="/">\n<link rel="alternate" hreflang="en" href="/">\n<link rel="alternate" hreflang="es" href="/es/">`
+      )
+    })
+  })
 })
 
 describe('Filters', () => {
@@ -372,6 +381,21 @@ describe('Filters', () => {
       const html = await liquid.parseAndRender(liquidMarkup)
       expect(html.trim()).toBe(
         '[{"Name A":"#1234","ID":"1234567890","Date":"2021/03/23"},{"Name A":"#1235","ID":"1234567891","Date":"2021/03/24"}]'
+      )
+    })
+  })
+
+  describe('t', () => {
+    test('returns literal from default locale file', async () => {
+      const liquidMarkup = `{{ 'general.404.title' | t }}`
+      const html = await liquid.parseAndRender(liquidMarkup)
+      expect(html).toBe('Page not found')
+    })
+    test('returns error message if string id does not exist', async () => {
+      const liquidMarkup = `{{ 'general.404s.title' | t }}`
+      const html = await liquid.parseAndRender(liquidMarkup)
+      expect(html).toBe(
+        `STRING WITH ID 'general.404s.title' NOT FOUND IN LOCALE FILE`
       )
     })
   })
