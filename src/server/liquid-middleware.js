@@ -51,6 +51,9 @@ exports.templatesMiddleware = (themePath, dataPath) => {
             `${dataPath}/${template.type}.json`
           )
           data.theme_variables = theme.variables || {}
+          data.published_locales =
+            theme.published_locales.map(l => ({ code: l, url: '' })) || []
+          data.locale = theme.default_locale || 'en'
           const html = await liquid.renderFile(
             path.join('templates', template.template),
             data
