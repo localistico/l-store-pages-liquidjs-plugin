@@ -55,6 +55,7 @@ describe('Tags', () => {
     })
   })
 
+  // DEPRECATED
   describe('page_url', () => {
     test('should render a correct page_url', async () => {
       const html = await liquid.parseAndRender('{% page_url store-locator %}')

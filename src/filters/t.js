@@ -4,7 +4,11 @@ const { getThemeConfig, getParsedJsonFromFile } = require('../utils')
 const t = function (input) {
   const themeConfig = getThemeConfig(this.liquid.options.root[0])
   const { default_locale } = themeConfig
-  const localeFilePath = `${this.liquid.options.root[0]}/locales/${default_locale}.json`
+
+  const locale = this.context.environments.locale || default_locale
+
+  const localeFilePath = `${this.liquid.options.root[0]}/locales/${locale}.json`
+
   // eslint-disable-next-line no-unused-vars
   const localeFile = getParsedJsonFromFile(localeFilePath)
   const evalLine = `localeFile['${input.split('.').join("']['")}']`

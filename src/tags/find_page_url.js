@@ -7,7 +7,8 @@ const find_page_url = {
   },
   // eslint-disable-next-line no-unused-vars
   render: function (ctx, hash) {
-    return `/${this.name}`
+    const urlPrefix = ctx.globals.urlPrefix || ''
+    return `${urlPrefix}/${this.name}`
   },
 }
 

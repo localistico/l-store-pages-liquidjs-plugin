@@ -81,7 +81,9 @@ const location_json_ld = {
 }
 
 function formatLocationUrl(location, template_key = 'store-page', engine) {
-  return engine.parseAndRenderSync(`{% page_url ${template_key} location.id %}`)
+  return engine.parseAndRenderSync(
+    `{% find_page_url ${template_key} location.id %}`
+  )
 }
 
 function formatLocationDescription(location, description, engine) {

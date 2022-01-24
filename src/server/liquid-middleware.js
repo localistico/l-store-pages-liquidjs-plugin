@@ -19,11 +19,30 @@ exports.templatesMiddleware = (themePath, dataPath) => {
       const templates = [...theme.templates]
       const url = new URL(req.url, 'http://127.0.0.1') // Base url is only for parsing url
 
-      // Index
-      if (url.pathname === '/') {
+      const { published_locales } = theme
+
+      let currentLocale = theme.default_locale
+      let isDefaultLocale = true
+
+      published_locales.forEach(locale => {
+        const localeUrlRegexp = new RegExp(`/(${locale}){1}(/|$)`, 'g')
+        if (localeUrlRegexp.test(url.pathname)) {
+          currentLocale = locale
+          isDefaultLocale = false
+        }
+      })
+
+      const urlPrefix = isDefaultLocale ? '' : `/${currentLocale}`
+
+      // Index of templates (dev mode)
+      if (
+        (isDefaultLocale && url.pathname === '/') ||
+        (!isDefaultLocale && url.pathname === `/${currentLocale}`)
+      ) {
         res.end(
           await liquid.parseAndRender(utils.getUITemplate('index'), {
-            templates: templates,
+            templates,
+            urlPrefix,
           })
         )
       }
@@ -44,7 +63,12 @@ exports.templatesMiddleware = (themePath, dataPath) => {
       // Theme templates
       else {
         const template = templates
-          .filter(tpl => `/${tpl.key}` === url.pathname)
+          .filter(tpl => {
+            const templateUrl = `/${
+              !isDefaultLocale ? `${currentLocale}/` : ''
+            }${tpl.key}`
+            return templateUrl === url.pathname
+          })
           .shift()
         if (template) {
           let data = utils.getParsedJsonFromFile(
@@ -52,11 +76,19 @@ exports.templatesMiddleware = (themePath, dataPath) => {
           )
           data.theme_variables = theme.variables || {}
           data.published_locales =
-            theme.published_locales.map(l => ({ code: l, url: '' })) || []
-          data.locale = theme.default_locale || 'en'
+            theme.published_locales.map(l => ({ code: l, url: `/${l}` })) || []
+          data.locale = currentLocale
+
           const html = await liquid.renderFile(
             path.join('templates', template.template),
-            data
+            data,
+            {
+              globals: {
+                locale: currentLocale,
+                published_locales,
+                urlPrefix,
+              },
+            }
           )
           res.setHeader('Content-Type', template.content_type)
           res.end(html)

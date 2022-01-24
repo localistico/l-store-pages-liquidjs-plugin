@@ -70,8 +70,8 @@
       <tbody>
         {% for template in templates %}
           <tr>
-            <td><a href="/{{template.key}}">{{template.name}}</a></td>
-            <td>{{template.url}}</td>
+            <td><a href="{{ urlPrefix }}/{{ template.key }}">{{template.name}}</a></td>
+            <td>{{ urlPrefix }}{{ template.url }}</td>
             <td>{{template.template}}</td>
             <td>{{template.key}}</td>
             <td>{{template.type}}</td>
