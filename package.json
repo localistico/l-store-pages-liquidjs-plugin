@@ -1,6 +1,6 @@
 {
   "name": "l-store-pages-liquidjs-plugin",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Store Pages custom middleware, tags and filters for LiquidJS",
   "main": "src/index.js",
   "private": true,
