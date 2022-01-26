@@ -76,7 +76,7 @@ exports.templatesMiddleware = (themePath, dataPath) => {
           )
           data.theme_variables = theme.variables || {}
           data.published_locales =
-            theme.published_locales.map(l => ({ code: l, url: `/${l}` })) || []
+            theme.published_locales.map(l => ({ code: l, url: `/${l}/${template.key}` })) || []
           data.locale = currentLocale
 
           const html = await liquid.renderFile(
