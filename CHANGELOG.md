@@ -1,6 +1,12 @@
 
 # Changelog
 
+## v3.2.2
+
+### Fixes
+
+- Moved eslint and jest to devDependencies to avoid issues with NodeJS versions
+
 ## v3.2.1
 
 ### Added features
