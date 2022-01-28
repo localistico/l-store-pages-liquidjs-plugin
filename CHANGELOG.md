@@ -1,6 +1,14 @@
 
 # Changelog
 
+## v3.2.1
+
+### Added features
+
+- Added stuff around i18n
+- Added 't' filter
+- Added 'content_for_head' tag
+
 ## v3.1.0
 
 ### Added features
