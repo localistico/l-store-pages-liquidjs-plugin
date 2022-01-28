@@ -58,3 +58,33 @@ exports.responseWithJsonFromFile = (res, dataFilepath) => {
   res.setHeader('Content-Type', 'application/json')
   res.end(fs.readFileSync(dataFilepath))
 }
+
+/**
+ * Returns a flatten version of the object tree
+ * @param {object} target Object
+ * @returns
+ */
+exports.flatten = target => {
+  const output = {}
+
+  function step(object, prev) {
+    Object.keys(object).forEach(function (key) {
+      const value = object[key]
+      const isarray = Array.isArray(value)
+      const type = Object.prototype.toString.call(value)
+      const isobject = type === '[object Object]' || type === '[object Array]'
+
+      const newKey = prev ? prev + '.' + key : key
+
+      if (!isarray && isobject && Object.keys(value).length) {
+        return step(value, newKey)
+      }
+
+      output[newKey] = value
+    })
+  }
+
+  step(target)
+
+  return output
+}

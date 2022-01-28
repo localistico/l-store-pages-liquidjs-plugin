@@ -3,6 +3,7 @@
     "404": {
       "title": "Página no encontrada",
       "subtitle": "Lo siento, no encuentro esta página"
-    }
+    },
+    "example": "Ejemplo con {{var1}} y {{var2}}"
   }
 }

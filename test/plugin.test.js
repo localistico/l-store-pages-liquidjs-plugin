@@ -392,6 +392,11 @@ describe('Filters', () => {
       const html = await liquid.parseAndRender(liquidMarkup)
       expect(html).toBe('Page not found')
     })
+    test('returns literal with variables interpolated', async () => {
+      const liquidMarkup = `{{ 'general.example' | t: var1: "value1", var2: "value2" }}`
+      const html = await liquid.parseAndRender(liquidMarkup)
+      expect(html).toBe('Example with value1 y value2')
+    })
     test('returns error message if string id does not exist', async () => {
       const liquidMarkup = `{{ 'general.404s.title' | t }}`
       const html = await liquid.parseAndRender(liquidMarkup)
@@ -399,5 +404,6 @@ describe('Filters', () => {
         `STRING WITH ID 'general.404s.title' NOT FOUND IN LOCALE FILE`
       )
     })
+    // Usage: {{ 'path.to.string' | t: var1: variable, var2: "string" }}
   })
 })
