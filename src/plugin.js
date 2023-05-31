@@ -30,4 +30,8 @@ module.exports = function () {
   this.registerFilter('parse_json', require('./filters/parse_json'))
   this.registerFilter('parse_csv', require('./filters/parse_csv'))
   this.registerFilter('t', require('./filters/t'))
+  this.registerFilter(
+    'replace_with_regex',
+    require('./filters/replace_with_regex')
+  )
 }
