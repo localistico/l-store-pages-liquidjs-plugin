@@ -1,5 +1,10 @@
-
 # Changelog
+
+## v3.3.1
+
+### Added features
+
+- Added `replace_with_regex` filter
 
 ## v3.2.2
 
